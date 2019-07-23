@@ -8,7 +8,6 @@ class BaseRepository():
         _config = configparser.ConfigParser()
         _config.read('config.ini', encoding='utf-8')
 
-        print(_config.get('database', 'dbname'))
         try:
             self.conn = sqlite3.connect(_config.get('database', 'dbname'))
         except Exception as ex:
